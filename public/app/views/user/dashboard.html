@@ -1,0 +1,112 @@
+<p style="padding:40px;"></p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <h3 class="text-center">Formulario de instalación, todos los campos son <span style="color:red">*</span> necesarios</h4>
+      <form class="form-horizontal" name="registerForm" ng-submit="vm.uploadRegistry()">
+          <h4 class="text-center">Datos de la persona atendida</h4>
+	    		<div class="form-group">
+	    			<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+	    				<label for="nombre" class="col-xs-12 col-sm-12 ">Nombre(s) de la persona <span style="color:red">*</span></label>
+					    <div class="col-xs-12 col-sm-12">
+					      <input type="text" id="nombre" ng-model="vm.dataRegister.person.names"  placeholder="P.ej.: Richard" class="form-control" required>
+					    </div>
+	    			</div>
+				</div>
+				<div class="form-group">
+					<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+						<label for="apat" class=" col-xs-12 ">Apellido(s) <span style="color:red">*</span></label>
+					    <div class="col-xs-12 col-sm-12">
+					      <input type="text" id="apat" ng-model="vm.dataRegister.person.lastnames" class="form-control" placeholder="P.ej.: Munsk" class="form-control" required>
+					    </div>
+					</div>
+				</div>
+    		<div class="form-group">
+          <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+						<label for="mail" class=" col-xs-12 ">Correo electrónico </label>
+					    <div class="col-xs-12 col-sm-12">
+					      <input type="email" id="mail" ng-model="vm.dataRegister.person.email" class="form-control" placeholder="P.ej.: ubunut@unix.com" class="form-control" required>
+					    </div>
+					</div>
+      	</div>
+        <h4 class="text-center">Datos de la computadora</h4>
+				<div class="form-group">
+					<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+						<label for="brand" class=" col-xs-12 ">Marca de computadora actual<span style="color:red">*</span></label>
+						<div class="col-xs-12 col-sm-6">
+							<input type="text" id="brand" class="form-control" ng-model="vm.dataRegister.computer.brand" required>
+							<p style="padding:3px;"></p>
+						</div>
+					</div>
+				</div>
+        <div class="form-group">
+					<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+						<label for="osa" class=" col-xs-12 ">Sistema opertativo actual <span style="color:red">*</span></label>
+						<div class="col-xs-12 col-sm-6">
+							<input type="text" id="osa" class="form-control" ng-model="vm.dataRegister.computer.actual_os" required>
+							<p style="padding:3px;"></p>
+						</div>
+					</div>
+				</div>
+        <div class="form-group">
+					<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+						<label for="osa" class=" col-xs-12 ">Memoria RAM de computadora actual (expresar en formato: [numero][GB] )<span style="color:red">*</span></label>
+						<div class="col-xs-12 col-sm-6">
+							<input type="text" id="osa" class="form-control" ng-model="vm.dataRegister.computer.ram" required>
+							<p style="padding:3px;"></p>
+						</div>
+					</div>
+				</div>
+        <div class="form-group">
+					<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+						<label for="osa" class=" col-xs-12 ">Procesador de computadora actual (expresar en formato: [numero][GB] )<span style="color:red">*</span></label>
+						<div class="col-xs-12 col-sm-6">
+							<input type="text" id="osa" class="form-control" ng-model="vm.dataRegister.computer.processor" required>
+							<p style="padding:3px;"></p>
+						</div>
+					</div>
+				</div>
+        <div class="form-group">
+					<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+						<label for="ost" class=" col-xs-12 ">Sistema opertativo a instalar <span style="color:red">*</span></label>
+						<div class="col-xs-12 col-sm-6">
+							<input type="text" id="ost" class="form-control" ng-model="vm.dataRegister.computer.os_to_install" required>
+							<p style="padding:3px;"></p>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-xs-12 col-sm-8 col-sm-offset-2" lx-tooltip-position="top" lx-tooltip="En la primera versión del concurso, se aceptarán únicamente postulaciones de La Paz y El Alto">
+						<label for="type" class=" col-xs-12" >Tipo de computadora <span style="color:red">*</span></label>
+						<div class="col-xs-12">
+							<select ng-model="vm.dataRegister.computer.type" id="type" class="form-control" ng-options="type for type in vm.types"></select>
+						</div>
+					</div>
+				</div>
+        <div class="form-group">
+					<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+						<label for="canbe" class=" col-xs-8">¿Se puede instalar? <span style="color:red">*</span></label>
+						<div class="col-xs-4">
+              <input type="radio" id="canbe" ng-value="true" ng-model="vm.dataRegister.computer.can_be_inst" class="form-control" />
+							<input type="radio" id="canbe" ng-value="false" ng-model="vm.dataRegister.computer.can_be_inst" class="form-control" />
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+						<label for="zone" class=" col-xs-12">Detalles </label>
+						<div class="col-xs-12">
+							<textarea rows="5" type="text" id="zone" ng-model="vm.dataRegister.computer.details" class="form-control"></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+					<div class="alert alert-danger msg-alert" ng-if="vm.upload.fail">
+            <strong> {{vm.upload.msg}}</strong>
+          </div>
+	        <button type="submit" class="btn btn-success btn-lg pull-right" ng-disabled="vm.upload.isLoading"><i ng-class="!vm.upload.isLoading ? 'fa fa-check-circle-o' : 'fa fa-circle-o-notch fa-spin'"></i> Registrar computadora</button>
+				</div>
+      </form>
+    </div>
+  </div>
+</div>

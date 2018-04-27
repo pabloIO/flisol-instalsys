@@ -1,0 +1,23 @@
+{
+  "name": "FLISOL registro de instalacion",
+  "authors": [
+    "Pablo Diego Montes Jordan <pabloIO>"
+  ],
+  "description": "Sistema para registrar las computadoras que seran instaldas en el FLISOL",
+  "main": "",
+  "keywords": [
+    "FLISOL",
+    "laravel",
+    "bootstrap",
+    "angular1"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
